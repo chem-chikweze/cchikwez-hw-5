@@ -24,7 +24,6 @@ import com.cchikwez.books.data.Book
 import com.cchikwez.books.ui.theme.BooksTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import com.cchikwez.books.R
 import com.cchikwez.books.data.BookTestData
