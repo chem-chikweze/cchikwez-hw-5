@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -47,7 +48,7 @@ fun BookItem(book: Book) {
             painterResource(id = book.image),
             contentDescription = null,
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
         )
         Text(
             text = "${book.index}. ${book.title}",
