@@ -7,7 +7,7 @@ import com.cchikwez.books.R
 object BookTestData {
     val allBooks = listOf(
         Book(
-            index = 0,
+            index = 1,
             title = "Harry Potter and the Sorcerer's Stone",
             author = "JK Rowling",
             released =  1997,
@@ -16,7 +16,7 @@ object BookTestData {
             image = R.drawable.img_0
         ),
         Book(
-            index = 1,
+            index = 2,
             title = "Harry Potter and the Chamber of Secrets",
             author = "JK Rowling",
             released =  1998,
@@ -25,7 +25,7 @@ object BookTestData {
             image = R.drawable.img_1
         ),
         Book(
-            index = 2,
+            index = 3,
             title = "Harry Potter and the Prisoner of Azkaban",
             author = "JK Rowling",
             released =  1999,
@@ -34,7 +34,7 @@ object BookTestData {
             image = R.drawable.img_2
         ),
         Book(
-            index = 3,
+            index = 4,
             title = "Harry Potter and the Goblet of Fire",
             author = "JK Rowling",
             released =  2000,
@@ -43,7 +43,7 @@ object BookTestData {
             image = R.drawable.img_3
         ),
         Book(
-            index = 4,
+            index = 5,
             title = "Harry Potter and the Order of the Phoenix",
             author = "JK Rowling",
             released =  2003,
@@ -52,7 +52,7 @@ object BookTestData {
             image = R.drawable.img_4
         ),
         Book(
-            index = 5,
+            index = 6,
             title = "Harry Potter and the Half-Blood Prince",
             author = "JK Rowling",
             released =  2005,
@@ -61,7 +61,7 @@ object BookTestData {
             image = R.drawable.img_5
         ),
         Book(
-            index = 6,
+            index = 7,
             title = "Harry Potter and the Deathly Hallows",
             author = "JK Rowling",
             released =  2007,
