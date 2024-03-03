@@ -21,8 +21,24 @@ class BooksVM: ViewModel() {
             books = books
         )
     }
+
+    fun selectBook(idx: Int) {
+        val book = uiState.value.books.find { it.index == idx }
+        _uiState.value = _uiState.value.copy(
+            selectedBook = book,
+            showsDetail = true
+        )
+    }
+    fun hideDetail() {
+        _uiState.value = _uiState.value.copy(
+            selectedBook = _uiState.value.books.first(),
+            showsDetail = false
+        )
+    }
 }
 
 data class HomeUIState(
-    val books: List<Book> = emptyList()
+    val books: List<Book> = emptyList(),
+    val selectedBook: Book? = null,
+    val showsDetail: Boolean = false,
 )
