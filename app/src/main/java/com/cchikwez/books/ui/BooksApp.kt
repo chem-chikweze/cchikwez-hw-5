@@ -39,7 +39,6 @@ fun BooksApp(
     }
 }
 
-
 @Preview
 @Composable
 fun ContentPreview() {

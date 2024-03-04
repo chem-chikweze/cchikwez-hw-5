@@ -47,15 +47,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun BooksAppPreview() {
-//    BooksTheme {
-//        Surface(tonalElevation = 5.dp) {
-//            BooksApp(homeUIState = HomeUIState(books = BookTestData.allBooks))
-//        }
-//    }
-//}
