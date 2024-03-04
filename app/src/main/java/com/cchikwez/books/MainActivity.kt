@@ -17,6 +17,7 @@ import com.cchikwez.books.data.BookTestData
 import com.cchikwez.books.ui.BooksApp
 import com.cchikwez.books.ui.BooksVM
 import com.cchikwez.books.ui.HomeUIState
+import com.cchikwez.books.ui.screens.HomeScreen
 import com.cchikwez.books.ui.theme.BooksTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +33,15 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BooksApp(homeUIState = uiState, modifier = Modifier.fillMaxSize())
+                    BooksApp(
+                        homeUIState = uiState,
+                        selectBook = {
+                            viewModel.selectBook(it)
+                        },
+                        hideDetail = {
+                            viewModel.hideDetail()
+                        }
+                    )
                 }
             }
         }
@@ -40,13 +49,13 @@ class MainActivity : ComponentActivity() {
 }
 
 
-
-@Preview(showBackground = true)
-@Composable
-fun BooksAppPreview() {
-    BooksTheme {
-        Surface(tonalElevation = 5.dp) {
-            BooksApp(homeUIState = HomeUIState(books = BookTestData.allBooks) , modifier = Modifier.fillMaxSize())
-        }
-    }
-}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun BooksAppPreview() {
+//    BooksTheme {
+//        Surface(tonalElevation = 5.dp) {
+//            BooksApp(homeUIState = HomeUIState(books = BookTestData.allBooks))
+//        }
+//    }
+//}

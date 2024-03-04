@@ -1,6 +1,7 @@
 package com.cchikwez.books.ui.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -27,32 +28,40 @@ import com.cchikwez.books.ui.theme.BooksTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.layout.ContentScale
 import com.cchikwez.books.data.BookTestData
+import com.cchikwez.books.ui.BooksApp
 import com.cchikwez.books.ui.HomeUIState
 
 
 @Composable
-fun BooksApp(homeUIState: HomeUIState, modifier: Modifier){
-    BookList(books = homeUIState.books)
+fun HomeScreen(
+    homeUIState: HomeUIState,
+    selectBook: (Int) -> Unit
+){
+    BookList(books = homeUIState.books, selectBook)
 }
 
 @Composable
-fun BookList(books: List<Book>) {
+fun BookList(books: List<Book>, selectBook: (Int) -> Unit) {
     LazyColumn(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
         items(
             items = books,
             itemContent = { book ->
-                BookItem(book = book)
+                BookItem(book = book, selectBook)
             }
         )
     }
 }
 
 @Composable
-fun BookItem(book: Book) {
+fun BookItem(
+    book: Book,
+    selectBook: (Int) -> Unit
+) {
     Column(
         modifier = Modifier
             .padding(vertical = 8.dp)
             .fillMaxWidth()
+            .clickable { selectBook(book.index) },
     ) {
         val imgModifier = Modifier
             .size(72.dp)
@@ -95,7 +104,10 @@ fun BookItem(book: Book) {
 fun ContentPreview() {
     BooksTheme() {
         Surface(tonalElevation = 5.dp) {
-            BooksApp(homeUIState = HomeUIState(books = BookTestData.allBooks) , modifier = Modifier.fillMaxSize())
+            HomeScreen(
+                homeUIState = HomeUIState(books = BookTestData.allBooks),
+                selectBook = {}
+            )
         }
     }
 }

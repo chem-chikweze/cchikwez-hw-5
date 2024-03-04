@@ -29,7 +29,7 @@ import com.cchikwez.books.R
 import com.cchikwez.books.data.BookTestData
 
 @Composable
-fun DetailScreen(
+fun DetailsScreen(
     book: Book,
     hideDetail: () -> Unit,
 ){
@@ -101,7 +101,7 @@ fun DetailScreen(
 fun DetailScreenPreview() {
     BooksTheme() {
         Surface(tonalElevation = 5.dp) {
-            DetailScreen(book = BookTestData.allBooks.get(1), hideDetail = { })
+            DetailsScreen(book = BookTestData.allBooks.get(1), {})
         }
     }
 }
